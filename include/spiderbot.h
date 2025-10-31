@@ -16,6 +16,8 @@
     #define BOTTOM1 2
     #define BOTTOM2 3
 
+    #define NB_JOINTS 2
+
 typedef struct {
     int min;
     int max;
@@ -28,30 +30,26 @@ typedef struct {
     Servo motor;
 } motor_t;
 
+
 typedef motor_t leg_t[2];
 
-    /*
-leg_t legtop2 = {{110, -1.0 * STEP_ELBOW, {70, 110}},
-    {90, 1.0 * STEP_KNEE, {90, 180}}};
-leg_t legbottom1 = {{110, -1.0 * STEP_ELBOW, {70, 110}},
-    {90, 1.0 * STEP_KNEE, {90, 180}}};
-leg_t legbottom2 = {{70, 1.0 * STEP_ELBOW, {70, 110}},
-    {90, -1.0 * STEP_KNEE, {0, 90}}};
-    */
+
+extern const leg_t LEGTOP1;
+extern const leg_t LEGTOP2;
+extern const leg_t LEGBOTTOM1;
+extern const leg_t LEGBOTTOM2;
+
 
 class Spider {
     public:
-        leg_t legtop1 = {{70, 1.0 * STEP_ELBOW, {70, 110}},
-            {90, -1.0 * STEP_KNEE, {0, 90}}};
-        leg_t legtop2 = {{110, -1.0 * STEP_ELBOW, {70, 110}},
-            {90, 1.0 * STEP_KNEE, {90, 180}}};
-        leg_t legbottom1 = {{110, -1.0 * STEP_ELBOW, {70, 110}},
-            {90, 1.0 * STEP_KNEE, {90, 180}}};
-        leg_t legbottom2 = {{70, 1.0 * STEP_ELBOW, {70, 110}},
-            {90, -1.0 * STEP_KNEE, {0, 90}}};
+        leg_t legtop1;
+        leg_t legtop2;
+        leg_t legbottom1;
+        leg_t legbottom2;
+
         unsigned long long timer = 0; // Time between first and actuall loop iteration (in ms)
         unsigned long long nb_loop = 0; // Number of loop iteration
-        
+
         void init();
         void walk();
         void write();
@@ -60,6 +58,5 @@ class Spider {
         void extend();
         void retract();
 };
-
 
 #endif
