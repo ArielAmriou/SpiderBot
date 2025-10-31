@@ -5,13 +5,14 @@ Spider spider;
 void setup()
 {
     Serial.begin(9600);
-    init_spider(spider);
+    spider.init();
+    extend(spider);
+    retract(spider);
 }
 
 void loop()
 {
-    //spider.log(TOP1);
-    spider.walk();
-    spider.write();
-    delay(SPEED);
+    //spider.walk();
+    //spider.write();
+    spider.wait(SPEED);
 }

@@ -6,7 +6,7 @@
 
     #define ELBOW 0
     #define KNEE 1
-    #define SPEED 20
+    #define SPEED 200
 
     #define STEP_ELBOW (1.0)
     #define STEP_KNEE (90.0 / 40.0) // 90.0 = range of knee, 40.0 = range of elbow (in degrees)
@@ -30,22 +30,36 @@ typedef struct {
 
 typedef motor_t leg_t[2];
 
+    /*
+leg_t legtop2 = {{110, -1.0 * STEP_ELBOW, {70, 110}},
+    {90, 1.0 * STEP_KNEE, {90, 180}}};
+leg_t legbottom1 = {{110, -1.0 * STEP_ELBOW, {70, 110}},
+    {90, 1.0 * STEP_KNEE, {90, 180}}};
+leg_t legbottom2 = {{70, 1.0 * STEP_ELBOW, {70, 110}},
+    {90, -1.0 * STEP_KNEE, {0, 90}}};
+    */
+
 class Spider {
     public:
-        leg_t legtop1 = {{90, 1.0 * STEP_ELBOW, {70, 110}},
+        leg_t legtop1 = {{70, 1.0 * STEP_ELBOW, {70, 110}},
             {90, -1.0 * STEP_KNEE, {0, 90}}};
-        leg_t legtop2 = {{90, 1.0 * STEP_ELBOW, {70, 110}},
+        leg_t legtop2 = {{110, -1.0 * STEP_ELBOW, {70, 110}},
             {90, 1.0 * STEP_KNEE, {90, 180}}};
-        leg_t legbottom1 = {{90, 1.0 * STEP_ELBOW, {70, 110}},
+        leg_t legbottom1 = {{110, -1.0 * STEP_ELBOW, {70, 110}},
             {90, 1.0 * STEP_KNEE, {90, 180}}};
-        leg_t legbottom2 = {{90, 1.0 * STEP_ELBOW, {70, 110}},
+        leg_t legbottom2 = {{70, 1.0 * STEP_ELBOW, {70, 110}},
             {90, -1.0 * STEP_KNEE, {0, 90}}};
+        unsigned long long timer = 0; // Time between first and actuall loop iteration (in ms)
+        unsigned long long nb_loop = 0; // Number of loop iteration
 
-        void write();
         void walk();
+        void write();
+        void wait(unsigned long ms);
         void log(const int leg);
+        void init();
 };
 
-void init_spider(Spider &);
+void retract(Spider &spider);
+void extend(Spider &spider);
 
 #endif
