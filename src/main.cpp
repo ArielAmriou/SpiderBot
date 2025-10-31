@@ -6,8 +6,8 @@ void setup()
 {
     Serial.begin(9600);
     spider.init();
-    extend(spider);
-    retract(spider);
+    spider.extend();
+    spider.retract();
 }
 
 void loop()

@@ -51,15 +51,15 @@ class Spider {
             {90, -1.0 * STEP_KNEE, {0, 90}}};
         unsigned long long timer = 0; // Time between first and actuall loop iteration (in ms)
         unsigned long long nb_loop = 0; // Number of loop iteration
-
+        
+        void init();
         void walk();
         void write();
         void wait(unsigned long ms);
         void log(const int leg);
-        void init();
+        void extend();
+        void retract();
 };
 
-void retract(Spider &spider);
-void extend(Spider &spider);
 
 #endif

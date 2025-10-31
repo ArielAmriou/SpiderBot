@@ -5,10 +5,10 @@ void extend_leg(leg_t &leg) {
     leg[KNEE].motor.write(leg[KNEE].angle);
 }
 
-void extend(Spider &spider) {
-    extend_leg(spider.legtop1);
-    extend_leg(spider.legtop2);
-    extend_leg(spider.legbottom1);
-    extend_leg(spider.legbottom2);
+void Spider::extend() {
+    extend_leg(this->legtop1);
+    extend_leg(this->legtop2);
+    extend_leg(this->legbottom1);
+    extend_leg(this->legbottom2);
     delay(1000);
 }
