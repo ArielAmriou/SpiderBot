@@ -12,7 +12,8 @@ void setup()
 
 void loop()
 {
-    //spider.walk();
-    //spider.write();
+    spider.log(TOP1);
+    spider.walk();
+    spider.write();
     spider.wait(SPEED);
 }
