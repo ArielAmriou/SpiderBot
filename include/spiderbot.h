@@ -6,10 +6,10 @@
 
     #define ELBOW 0
     #define KNEE 1
-    #define SPEED 20
+    #define SPEED 10
 
     #define STEP_ELBOW (1.0)
-    #define STEP_KNEE ((90.0 / 40.0) * 2.0) // 90.0 = range of knee, 40.0 = range of elbow (in degrees), 2.0 to compansate the return factor
+    #define STEP_KNEE ((90.0 / 40.0)) // 90.0 = range of knee, 40.0 = range of elbow (in degrees), 2.0 to compansate the return factor
 
     #define TOP1 0
     #define TOP2 1
