@@ -1,4 +1,4 @@
-#include "spiderbot.h"
+#include "depedencies.h"
 
 void attach_pins(Spider &spider) {
     spider.legtop1.legs[ELBOW].motor.attach(11);
@@ -20,14 +20,18 @@ void init_leg(leg_t &leg, const leg_t src) {
     }
 }
 
-void init_spider(Spider &spider) {
+void init_spider(Spider &spider, unsigned long delay_time) {
     init_leg(spider.legtop1, LEGTOP1);
     init_leg(spider.legtop2, LEGTOP2);
     init_leg(spider.legbottom1, LEGBOTTOM1);
     init_leg(spider.legbottom2, LEGBOTTOM2);
+    spider.delay_time = delay_time;
 }
 
-void Spider::init() {
+void Spider::init(unsigned long delay_time = DEFAULT_DELAY_TIME) {
     attach_pins(*this);
-    init_spider(*this);
+    init_spider(*this, delay_time);
+    extend(*this);
+    retract(*this);
+    first_steps(*this);
 }
