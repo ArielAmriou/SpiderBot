@@ -1,4 +1,4 @@
-#include "depedencies.h"
+#include "dependencies.h"
 
 void Spider::write() {
     write_all(*this);

@@ -1,4 +1,4 @@
-#include "depedencies.h"
+#include "dependencies.h"
 
 void attach_pins(Spider &spider) {
     spider.legtop1.legs[ELBOW].motor.attach(11);

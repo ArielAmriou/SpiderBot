@@ -1,4 +1,4 @@
-#include "depedencies.h"
+#include "dependencies.h"
 
 void Spider::walk(int direction = FORWARD) {
     if ((this->nb_loop % 160) < 40)

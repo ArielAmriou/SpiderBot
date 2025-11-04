@@ -1,4 +1,4 @@
-#include "depedencies.h"
+#include "dependencies.h"
 
 void first_steps(Spider &spider) {
     for (int i = 0; i < 20; i++) {
