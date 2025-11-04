@@ -10,6 +10,8 @@ void setup()
 
 void loop()
 {
-    //spider.walk();
-    //spider.write();
+    if (spider.get_nb_loop() == 0)
+        spider.update_direction(M_BACKWARD);
+    spider.walk();
+    spider.write();
 }

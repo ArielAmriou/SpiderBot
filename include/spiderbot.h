@@ -43,6 +43,12 @@ extern const leg_t LEGTOP2;
 extern const leg_t LEGBOTTOM1;
 extern const leg_t LEGBOTTOM2;
 
+enum direction {
+    M_NONE,
+    M_FORWARD,
+    M_BACKWARD
+};
+
 class Spider {
     public:
         leg_t legtop1;
@@ -50,13 +56,22 @@ class Spider {
         leg_t legbottom1;
         leg_t legbottom2;
 
-        unsigned long long nb_loop = 0; // Number of loop iteration
         unsigned long delay_time; // Time of waiting before executing next loop iteration (in ms)
 
         void init(unsigned long delay_time = DEFAULT_DELAY_TIME);
-        void walk(int direction = FORWARD);
+        void walk();
         void write();
+        void update_direction(direction mode);
+        direction get_direction();
+        direction get_next_direction();
+        unsigned long long get_nb_loop();
+        
         void log(const int leg);
+
+    private:
+        unsigned long long nb_loop = 0; // Number of loop iteration
+        direction mode = M_NONE;
+        direction next_mode = M_NONE;
 };
 
 #endif
