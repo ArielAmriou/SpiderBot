@@ -7,6 +7,8 @@
     #define ELBOW 0
     #define KNEE 1
     #define DEFAULT_DELAY_TIME 5
+    #define QUICK_DELAY_TIME 0
+    #define SLOW_DELAY_TIME 10
 
     #define STEP_ELBOW (1.0)
     #define STEP_KNEE ((90.0 / 40.0)) // 90.0 = range of knee, 40.0 = range of elbow (in degrees), 2.0 to compansate the return factor

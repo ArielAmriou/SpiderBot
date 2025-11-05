@@ -1,8 +1,8 @@
 #include "spiderbot.h"
 
 void extend_leg(leg_t &leg) {
-    leg.legs[ELBOW].motor.write(leg.legs[ELBOW].angle);
-    leg.legs[KNEE].motor.write(leg.legs[KNEE].angle);
+    leg.legs[ELBOW].motor.write(leg.legs[ELBOW].angle + leg.legs[ELBOW].offset);
+    leg.legs[KNEE].motor.write(leg.legs[KNEE].angle + leg.legs[KNEE].offset);
 }
 
 void extend(Spider &spider) {

@@ -16,6 +16,7 @@ void init_leg(leg_t &leg, const leg_t src) {
         leg.legs[i].angle = src.legs[i].angle;
         leg.legs[i].range = src.legs[i].range;
         leg.legs[i].steps = src.legs[i].steps;
+        leg.legs[i].offset = src.legs[i].offset;
         leg.return_factor = true;
     }
 }
@@ -28,7 +29,7 @@ void init_spider(Spider &spider, unsigned long delay_time) {
     spider.delay_time = delay_time;
 }
 
-void Spider::init(unsigned long delay_time = DEFAULT_DELAY_TIME) {
+void Spider::init(unsigned long delay_time) {
     attach_pins(*this);
     init_spider(*this, delay_time);
     extend(*this);
