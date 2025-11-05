@@ -27,10 +27,11 @@ typedef struct {
 } range_t;
 
 typedef struct {
-    double angle;
-    double steps;
-    range_t range;
-    Servo motor;
+    double angle; // Current of angle of servo motor
+    double steps; // Value added to angle
+    int offset; // For calibration
+    range_t range; // Max and Min of servo range of action
+    Servo motor; // Servo object from servo.h library
 } motor_t;
 
 typedef struct {
