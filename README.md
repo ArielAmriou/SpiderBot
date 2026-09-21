@@ -27,6 +27,3 @@ SpiderBot is a quadruped walking robot: 4 legs, 8 joints (2 servos per leg — e
 - **Framework**: Arduino (via PlatformIO)
 - **Board**: `nanoatmega328new`
 - **Dependencies**: `arduino-libraries/Servo`
-
-## Project structure
-
